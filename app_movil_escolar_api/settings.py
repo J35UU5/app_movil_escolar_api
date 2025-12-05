@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '-_&+lsebec(whhw!%n@ww&1j=4-^j_if9x8$q
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Configura ALLOWED_HOSTS para producción
-ALLOWED_HOSTS = ['app-movil-escolar-api-9x8i.onrender.com']
+ALLOWED_HOSTS = ['app-movil-escolar-api-dk0r.onrender.com']
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
@@ -49,7 +49,7 @@ MIDDLEWARE = [
 # Configuración de CORS
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
-    'https://app-movil-escolar-web.vercel.app',
+    'https://app-movil-escolar-webapp-dusky.vercel.app',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -78,7 +78,7 @@ DATABASES = {
     'default': dj_database_url.config(
         # Esta configuración usará DATABASE_URL de Render automáticamente
         # Para desarrollo local, usa esta cadena de conexión
-        default='postgresql://app_movil_user:sLcyWew48hmC6VHIAGTCiRNS3TKT08uP@dpg-d4nl4v4hg0os739eat7g-a/app_movil_escolar_gl89',
+        default='postgresql://app_movil_escolar_db_8g9g_user:bURi4IPARpjZ6qIDL4KTMYczwIECLLUE@dpg-d4p6fh24i8rc73ch64l0-a/app_movil_escolar_db_8g9g',
         conn_max_age=600
     )
 }
