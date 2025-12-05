@@ -5,7 +5,10 @@ from django.conf.urls.static import static
 from .views.bootstrap import VersionView
 from app_movil_escolar_api.views import bootstrap
 from app_movil_escolar_api.views import users
+from app_movil_escolar_api.views import alumno
+from app_movil_escolar_api.views import maestro
 from app_movil_escolar_api.views import auth
+from app_movil_escolar_api.views import eventos
 # from sistema_escolar_api.views import alumnos
 # from sistema_escolar_api.views import maestros
 
@@ -15,7 +18,26 @@ urlpatterns = [
     #Admin Data
         path('lista-admins/', users.AdminAll.as_view()),
     #Edit Admin
-        #path('admins-edit/', users.AdminsViewEdit.as_view())
+        #path('admins-edit/', users.AdminsViewEdit.as_view()),
+    #Create Alumno
+        path('alumnos/', alumno.AlumnoView.as_view()),
+    #Alumno Data
+        path('lista-alumnos/', alumno.AlumnoAll.as_view()),    
+    #Create Maestro
+        path('maestros/', maestro.MaestroView.as_view()),
+    #Maestro Data
+        path('lista-maestros/', maestro.MaestroAll.as_view()),
+    #Total Users
+        path('total-usuarios/', users.TotalUsers.as_view()),
+    #Create Evento
+        path('evento/', eventos.EventView.as_view()),
+    #List Eventos
+        path('lista-eventos/', eventos.EventAll.as_view()),
+    #Login
+        path('login/', auth.CustomAuthToken.as_view()),
+    #Logout
+        path('logout/', auth.Logout.as_view())
+
 ]
 
 if settings.DEBUG:
